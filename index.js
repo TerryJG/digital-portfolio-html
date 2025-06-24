@@ -33,32 +33,17 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
-/* 
-In vite.config.js, the entry points for each page are already defined by Vite's rollup build. For example, visiting (website-link)/projects.html will load the projects.html file.
-The routes defined here using Express will add an additional way to access the html file. Therefore, visiting (website-link)/projects will load the same projects.html file.
-*/
 app.get('/projects', (req, res) => {
-  res.sendFile(path.join(__dirname, 'projects.html'));
+  res.sendFile(path.join(__dirname, 'dist', 'projects.html'));
 });
 
 app.get('/credits', (req, res) => {
-  res.sendFile(path.join(__dirname, 'credits.html'));
+  res.sendFile(path.join(__dirname, 'dist', 'credits.html'));
 });
 
-// Fallback route for any other pages
-app.get('*', (req, res) => {
+// Fallback route remains the same
+app.get('/*splat', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-});
-
-// Undefined endpoints (Express 5)
-app.use('/*splat', (req, res) => {
-  const errorMessage = "This API endpoint does not exist";
-  res.json({
-    error: 'Not found',
-    message: errorMessage,
-    path: req.originalUrl
-  });
-  console.log(errorMessage);
 });
 
 let conn = null;
