@@ -17,11 +17,6 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 
-app.use((req, res, next) => {
-    res.setHeader('Content-Type', 'application/json');
-    next();
-});
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -57,64 +52,57 @@ app.get('*', (req, res) => {
 
 // Undefined endpoints (Express 5)
 app.use('/*splat', (req, res) => {
-    const errorMessage = "This API endpoint does not exist";
-    res.json({
-        error: 'Not found',
-        message: errorMessage,
-        path: req.originalUrl
-    });
-    console.log(errorMessage);
+  const errorMessage = "This API endpoint does not exist";
+  res.json({
+    error: 'Not found',
+    message: errorMessage,
+    path: req.originalUrl
+  });
+  console.log(errorMessage);
 });
 
-if (process.env.NODE_ENV !== 'production') {
-    const startServer = () => {
-        const MONGO_URI = process.env.MONGO_URI;
-        if (!MONGO_URI) {
-            console.error('MONGO_URI not found in environment variables');
-            console.log('Starting server without MongoDB connection...');
-            app.listen(PORT, () => {
-                console.log(`API server is listening on port ${PORT} (without MongoDB)`);
-            });
-            return;
-        }
-        mongoose.connect(MONGO_URI, {
-            maxPoolSize: 100,
-            dbName: 'projects',
-        })
-        .then(async () => {
-            console.log("\nConnected to MongoDB");
-            console.log("Database Name:", mongoose.connection.db.databaseName);
-            const collections = await mongoose.connection.db.listCollections().toArray();
-            const collectionNames = collections.map(col => col.name);
-            console.log("All Collection Names:", collectionNames.length ? collectionNames.join(", ") : "[ ]");
-            app.listen(PORT, () => {
-                console.log(`\nAPI server is listening on port ${PORT} with MongoDB connection`);
-            });
-        })
-        .catch(err => {
-            console.error('MongoDB connection error:', err);
-            console.log('Starting server without MongoDB connection...');
-            app.listen(PORT, () => {
-                console.log(`\nAPI server is listening on port ${PORT} (MongoDB connection failed)`);
-            });
-        });
-    };
-    startServer();
-} else {
-    // For Vercel production environment, connect to MongoDB directly
-    const MONGO_URI = process.env.MONGO_URI;
-    if (MONGO_URI) {
-        mongoose.connect(MONGO_URI, {
-            maxPoolSize: 100,
-            dbName: 'projects',
-        })
-        .then(() => {
-            console.log("Connected to MongoDB in serverless mode");
-        })
-        .catch(err => {
-            console.error('MongoDB connection error in serverless mode:', err);
-        });
+let conn = null;
+const MONGO_URI = process.env.MONGO_URI;
+
+const connectToDatabase = async () => {
+  if (conn == null) {
+    if (!MONGO_URI) {
+      throw new Error('MONGO_URI not found in environment variables');
     }
+    conn = mongoose.connect(MONGO_URI, {
+      serverSelectionTimeoutMS: 5000,
+      maxPoolSize: 100,
+      dbName: 'projects',
+    }).then(() => mongoose);
+
+    await conn;
+  }
+  return conn;
+};
+
+const handler = async (req, res) => {
+  try {
+    await connectToDatabase();
+    return app(req, res);
+  } catch (error) {
+    console.error('Error connecting to database:', error);
+    res.status(500).json({
+      error: "Internal Server Error",
+      message: "Failed to connect to the database."
+    });
+  }
+};
+
+if (process.env.NODE_ENV !== 'production') {
+  connectToDatabase().then(() => {
+    console.log("Connected to MongoDB for local development.");
+    app.listen(PORT, () => {
+      console.log(`API server is listening on port ${PORT}`);
+    });
+  }).catch(err => {
+    console.error('Failed to start development server:', err);
+    process.exit(1);
+  });
 }
 
-export default app;
+export default handler;
