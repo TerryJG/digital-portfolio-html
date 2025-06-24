@@ -1,0 +1,29 @@
+/* Enable vertical scrolling */
+.scroll {
+  overflow-y: scroll;
+}
+
+/* DEFAULT CUSTOM SCROLLBAR */
+/* Width of the scrollbar */
+.scrollbar-custom {
+  $scrollbar-default--transition: all ease-in-out 0.2s;
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  /* Background of the scrollbar */
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #202020;
+    border-radius: 1px;
+    transition: $scrollbar-default--transition
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #212529;
+    transition: $scrollbar-default--transition
+  }
+}

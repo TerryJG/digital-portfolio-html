@@ -1,0 +1,341 @@
+////////// ROOT ////////////
+/* Fira Sans Font - Header */
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Roboto Font - Description */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body,
+html {
+  height: 100vh;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  filter: opacity(100);
+  transition: all ease-in 0.2s;
+  overflow: hidden;
+
+  @media all and (orientation: landscape) {
+    body,
+    html {
+      height: 100vh;
+    }
+  }
+}
+
+h1 {
+  font-family: "Fira Sans", sans-serif;
+}
+p {
+  font-family: "Poppins", sans-serif;
+}
+
+.hide-on-desktop {
+  // Hide elements in desktop view
+  @media all and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.hide-on-mobile {
+  // Hide elements in mobile view
+  @media all and (max-width: 768px) {
+    display: none;
+  }
+}
+
+////////// ANIMATION SETTINGS ////////////
+$fadeInDuration: 1s;
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+$moveUpDuration: 1s;
+
+@keyframes moveUp {
+  0% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+$zoomInDuration: 1s;
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.5);
+  }
+}
+
+$bounceDuration: 1.5s;
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+////////// BACKGROUND VIDEO ////////////
+#bg-video {
+  min-width: 100vw;
+  min-height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+
+  animation: fadeIn 20s;
+}
+
+////////// MAIN CONTAINER ////////////
+.overview {
+  // Content wrapper
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+
+  background: linear-gradient(254deg, #a5aac7e1, #c5a4c3, #fcefd7);
+  background-size: 200% 180%;
+  animation: gradient-animation 10s ease infinite;
+
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  ////////// NAME, EMAIL, ADDRESS ////////////
+  .name-header {
+    line-height: 0.55;
+    margin-bottom: 2%;
+
+    h1 {
+      font-size: 4rem;
+
+      animation-name: fadeIn;
+      animation-duration: $fadeInDuration;
+      animation-delay: 0s;
+      animation-fill-mode: forwards;
+
+      @media all and (min-width: 360px) and (max-width: 430px) {
+        padding: 10px;
+      }
+
+      @media all and (min-width: 768px) and (max-width: 430px) {
+        padding: 10px;
+      }
+    }
+
+    // email & number
+    address {
+      font-size: 1.4rem;
+
+      animation-name: fadeIn;
+      animation-duration: $fadeInDuration + 0.3s;
+      animation-delay: 0s;
+      animation-fill-mode: forwards;
+
+      a {
+        text-decoration: none;
+        color: black;
+        transition: ease 0.8s;
+
+        &:hover {
+          color: rgb(106, 177, 218);
+          transition: ease 0.2s;
+        }
+      }
+    }
+  }
+
+  ////////// DESCRIPTION ////////////
+  .description {
+    font-size: 0.5rem;
+    animation-name: fadeIn;
+    animation-duration: $fadeInDuration + 0.6s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+
+    // Removes buttons for mobile devices
+    @media all and (min-width: 360px) and (max-width: 768px) {
+      padding: 10px;
+
+      a {
+        display: none;
+      }
+    }
+  }
+
+  ////////// SOCIAL MEDIA LINKS ////////////
+  .social-media-links {
+    $social-media-font-size: 35px;
+    $social-media-margin: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    color: black;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    margin-top: 80px;
+
+    @media all and (min-width: 360px) and (max-width: 768px) {
+      position: relative;
+      margin-top: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    // anchor tag
+    i {
+      text-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    #github {
+      $github-color: #333;
+      $transition-time: 0.3s;
+      color: $github-color;
+      font-size: $social-media-font-size;
+
+      opacity: 0;
+      animation-name: fadeIn, moveUp;
+      animation-duration: $fadeInDuration, $moveUpDuration;
+      animation-delay: $transition-time;
+      animation-fill-mode: forwards;
+      transition: ease $transition-time;
+
+      &:hover {
+        color: lighten($github-color, 15%);
+        transition: ease $transition-time;
+      }
+    }
+
+    #facebook {
+      $facebook-color: #0080ff;
+      $transition-time: 0.5s;
+      color: $facebook-color;
+      font-size: $social-media-font-size;
+
+      opacity: 0;
+      animation-name: fadeIn, moveUp;
+      animation-duration: $fadeInDuration, $moveUpDuration;
+      animation-delay: $transition-time;
+      animation-fill-mode: forwards;
+      transition: ease $transition-time;
+
+      &:hover {
+        color: lighten($facebook-color, 15%);
+        transition: ease $transition-time;
+      }
+    }
+
+    #youtube {
+      $youtube-color: #ff0000;
+      $transition-time: 0.7s;
+      color: $youtube-color;
+      font-size: $social-media-font-size;
+
+      opacity: 0;
+      animation-name: fadeIn, moveUp;
+      animation-duration: $fadeInDuration, $moveUpDuration;
+      animation-delay: $transition-time;
+      animation-fill-mode: forwards;
+      transition: ease $transition-time;
+
+      &:hover {
+        color: lighten($youtube-color, 10%);
+        transition: ease $transition-time;
+      }
+    }
+
+    #instagram {
+      $instagram-color: #833ab4;
+      $transition-time: 0.9s;
+
+      color: $instagram-color;
+      font-size: $social-media-font-size;
+
+      opacity: 0;
+      animation-name: fadeIn, moveUp;
+      animation-duration: $fadeInDuration, $moveUpDuration;
+      animation-delay: $transition-time;
+      animation-fill-mode: forwards;
+      transition: ease $transition-time;
+
+      &:hover {
+        color: lighten($instagram-color, 15%);
+        transition: ease $transition-time;
+      }
+    }
+  }
+
+  ////////// ARROW INDICATOR (FOR MOBILE) ////////////
+  .arrow-indicator {
+    opacity: 0;
+    animation: fadeIn $fadeInDuration 2.7s;
+    animation-fill-mode: forwards;
+
+    @media all and (min-width: 360px) and (max-width: 768px) {
+      margin-top: 5rem;
+      text-align: center;
+    }
+
+    // Removes arrow indicator for desktop/TV devices
+    @media all and (min-width: 768px) {
+      display: none;
+    }
+
+    i {
+      font-size: 1.8rem;
+      animation: bounce $bounceDuration infinite;
+      text-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
+      margin: 0;
+      padding: 0;
+    }
+
+    p {
+      margin-top: 0.2rem;
+      font-size: 1.2rem;
+    }
+  }
+}

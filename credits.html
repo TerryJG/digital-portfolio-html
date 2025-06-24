@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Header metadata -->
+    <script type="module" src="src/js/header.js"></script>
+
+    <!-- Bootstrap 5.3.2 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <!-- Fancybox 5 (Video & Image Gallery) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script>
+
+    <!-- Font Awesome Fonts (for icons) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <style>
+        .main-container,
+        .nav-wrapper {
+            display: none;
+        }
+    </style>
+
+    <link rel="stylesheet" href="src/css/credits.css">
+
+    <link rel="stylesheet" href="src/css/scrollbar.css">
+    <script type="module" src="src/js/preloader.js"></script>
+    <script type="module" src="src/js/navbar.js"></script>
+</head>
+
+<body class="scroll scrollbar-custom">
+    <div class="main-container mt-5">
+        <summary class="text-center  mt-3  d-flex justify-content-center">
+            <p class="fs-6 w-50" style="cursor: default;">Website design and coding made by Terrance Gibson.
+                Additional framework, libraries, and software used in web construction listed below:</p>
+        </summary>
+
+        <div class="credit-wrapper fs-4  text-center  d-flex  justify-content-center">
+            <ul class="credit-list  list-unstyled">
+
+                <div class="single-row d-flex  justify-content-center  mt-3">
+                    <div class="boostrap" style="margin-right: 5rem;">
+                        <li>
+                            <i class="fa-brands fa-bootstrap fs-1" style="color: #8712f7;"></i>
+                            <h2 class="display-6 mb-0 fw-bold"><a id="bootstrap"
+                                    href="https://getbootstrap.com/">BOOTSTRAP</a></h2>
+                            <p class="fs-6">Front-end framework</p>
+                        </li>
+                    </div>
+                    <div class="sass">
+                        <li>
+                            <i class="fab fa-sass fs-1" style="color: #c66394;"></i>
+                            <h2 class="display-6 mb-0 fw-bold"><a id="sass" href="https://sass-lang.com/">SASS</a></h2>
+                            <p class="fs-6">CSS pre-processor</p>
+                        </li>
+                    </div>
+                </div>
+
+                <hr> <!-- Line -->
+
+                <li>
+                    <img class="" style="width: 4rem; border-radius: 5px;" src="src/content/icons/express-icon.svg">
+                    <p class="display-6 mb-0 fw-bold text-uppercase"><a id="express-js"
+                            href="https://www.commontools.org/tool/animated-gradient-background-generator-29">Express.js</a>
+                    </p>
+                    <p class="mb-5 fs-6">Web framework for Node.js</p>
+                </li>
+
+                <li>
+                    <img class="mt-4 mb-2" style="width: 12rem; border-radius: 5px;"
+                        src="src/content/icons/commontools-logo.svg">
+                    <p class="display-8 mb-0 lh-1 fw-light text-uppercase">FROM COMMONTOOLS
+                    <p class="display-6 mb-0 fw-bold text-uppercase"><a id="gradient-generator"
+                            href="https://www.commontools.org/tool/animated-gradient-background-generator-29">ANIMATED
+                            GRADIENT GENERATOR</a></p>
+                    <p class="mb-5 fs-6">CSS Animated Gradient Background Generator</p>
+                </li>
+
+                <li>
+                    <img class="mt-2 mb-3" style="width: 3rem; border-radius: 5px;"
+                        src="src/content/icons/fancybox-icon.svg">
+                    <p class="display-8 mb-0 lh-1 fw-light text-uppercase">FROM FANCYAPPS
+                    <p class="display-6 mb-0 fw-bold text-uppercase"><a id="fancybox-1"
+                            href="https://fancyapps.com/">FANCY<span id="fancybox-2">BOX</span></a></p>
+                    <p class="mb-5 fs-6">Javascript Lightbox / Image Gallery</p>
+                </li>
+
+                <li>
+                    <i class="mt-2 fa-solid fa-font-awesome fs-1" style="color: #4f89d0;"></i>
+                    <p class="display-6 mb-0 fw-bold" text-uppercase><a id="font-awesome"
+                            href="https://fontawesome.com/">FONTAWESOME</a></p>
+                    <p class="mb-5 fs-6">Icon library and toolkit</p>
+                </li>
+
+                <li>
+                    <i class="mt-2 fa-brands fa-github fs-1"></i>
+                    <p class="display-6 mb-0 fw-bold text-uppercase"><a id="github"
+                            href="https://github.com/">GITHUB</a></p>
+                    <p class="mb-5 fs-6">Source Content Repository</p>
+                </li>
+
+                <li>
+                    <img class="mt-2 mb-2" style="width: 3rem; border-radius: 5px;"
+                        src="src/content/icons/kunka-labs-mixitup-color.png">
+                    <p class="display-8 mb-0 lh-1 fw-light text-uppercase">FROM KUNKA LABS
+                    <p class="display-6 mb-0 fw-bold text-uppercase"><a id="mix-it-up"
+                            href="https://www.kunkalabs.com/mixitup/">MIXITUP</a></p>
+                    <p class="mb-5 fs-6">Javascript Filtering & Sorting Library</p>
+                </li>
+
+                <li>
+                    <img class="mt-2 mb-n1" style="width: 4rem; border-radius: 5px;"
+                        src="src/content/icons/cloudflare-icon.png">
+                    <p class="display-8 mb-0 lh-1 fw-light text-uppercase">FROM CLOUDFLARE
+                    <p class="display-6 mb-0 fw-bold text-uppercase"><a id="cloudflare"
+                            href="https://pages.cloudflare.com/">CLOUDEFLARE PAGES</a></p>
+                    <p class="mb-5 fs-6">Content Delivery Network & Web Hosting</p>
+                </li>
+
+                <hr> <!-- Line -->
+
+                <li>
+                    <img class="mt-4 mb-2" style="width: 3rem; border-radius: 5px; filter: grayscale(20%);"
+                        src="src/content/icons/shutter-icon.png">
+                    <p class="display-6 mb-0 fw-bold text-uppercase">SHUTTER ENCODER</p>
+                    <p class="mb-5 fs-6">Image & Video Encoding Software</p>
+                </li>
+
+                <div class="single-row d-flex  justify-content-center  mt-3">
+                    <div class="photoshop" style="margin-right: 5rem;">
+                        <li>
+                            <img class="mt-2 mb-2" style="width: 3.5rem; border-radius: 5px;"
+                                src="src/content/icons/adobe-photoshop-cc-icon.svg">
+                            <p class="display-8 mb-0 lh-1 fw-light text-uppercase">FROM ADOBE
+                            <p class="display-6 mb-0 fw-bold text-uppercase">PHOTOSHOP</p>
+                            <p class="fs-6">Image Editing Software</p>
+                        </li>
+                    </div>
+
+                    <div class="premiere-pro">
+                        <li>
+                            <img class="mt-2 mb-2" style="width: 3.5rem; border-radius: 5px;"
+                                src="src/content/icons/adobe-premiere-pro-cc-icon.svg">
+                            <p class="display-8 mb-0 lh-1 fw-light text-uppercase">FROM ADOBE
+                            <p class="display-6 mb-0 fw-bold text-uppercase">PREMIERE PRO</p>
+                            <p class="fs-6">Non-linear Video Editing Software</p>
+                        </li>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

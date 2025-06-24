@@ -1,0 +1,139 @@
+////////// ROOT ////////////
+/* Fira Sans Font - Header */
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* Roboto Font - Description */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+body {
+  background: rgb(255, 234, 255);
+  background: linear-gradient(80deg, rgba(238, 252, 241, 0.99) 10%, rgba(253, 247, 255, 0.95) 70%);
+}
+body,
+.credit-wrapper {
+  font-family: "Poppins", sans-serif;
+}
+h2 {
+  font-family: "Fira Sans", sans-serif;
+}
+a {
+  text-decoration: none !important;
+  $default-color: rgb(26, 26, 26) !important;
+  color: $default-color;
+}
+
+////////// TEXT COLORS ////////////
+#bootstrap {
+  $theme-color: #8712f7;
+  transition: all ease-in 0.2s;
+  &:hover {
+    color: $theme-color !important;
+    transition: all ease-out 0.2s;
+  }
+}
+#sass {
+  $theme-color: #c66394;
+  transition: all ease-in 0.2s;
+  &:hover {
+    color: $theme-color !important;;
+    transition: all ease-out 0.2s;
+  }
+}
+
+#express-js {
+  $theme-color: #74aa66;
+  transition: all ease-in 0.2s;
+  &:hover {
+    color: $theme-color !important;;
+    transition: all ease-out 0.2s;
+  }
+}
+
+#gradient-generator {
+  $theme-color: #ffc107;
+  transition: all ease-in 0.2s;
+  &:hover {
+    color: $theme-color !important;;
+    transition: all ease-out 0.2s;
+  }
+}
+#fancybox-1 {
+  $theme-color: rgb(26, 26, 26);
+  transition: all ease-in 0.2s;
+  &:hover {
+    color: $theme-color !important;;
+    transition: all ease-out 0.2s;
+
+    #fancybox-2 {
+      color: #d8d8d8;
+      transition: all ease-out 0.2s;
+    }
+  }
+  :not(:hover) {
+    color: $theme-color !important;;
+    transition: all ease-out 0.2s;
+  }
+}
+#font-awesome {
+  $theme-color: #4f89d0;
+  transition: all ease-in 0.2s;
+  &:hover {
+    color: $theme-color !important;;
+    transition: all ease-out 0.2s;
+  }
+}
+#fullpage {
+  $theme-color: #f56443;
+  transition: all ease-in 0.2s;
+  &:hover {
+    color: $theme-color !important;;
+    transition: all ease-out 0.2s;
+  }
+}
+#live-canvas-1 {
+  $theme-color: rgb(26, 26, 26);
+  transition: all ease-in 0.2s;
+  &:hover {
+    color: #25c6da;
+    transition: all ease-in 0.2s;
+
+    #live-canvas-2 {
+      color: #e83f8c;
+      transition: all ease-in 0.2s;
+    }
+  }
+  :not(:hover) {
+    color: $theme-color !important;;
+    transition: all ease-in 0.2s;
+  }
+}
+#mix-it-up {
+  $theme-color: #51c9e5;
+  transition: all ease-in 0.2s;
+  &:hover {
+    color: $theme-color !important;;
+    transition: all ease-out 0.2s;
+  }
+}
+#site-grounds {
+  $theme-color: #96cb4c;
+  transition: all ease-in 0.2s;
+  &:hover {
+    color: $theme-color !important;;
+    transition: all ease-out 0.2s;
+  }
+}
+#cloudflare {
+  $theme-color: #f38020;
+  transition: all ease-in 0.2s;
+  &:hover {
+    color: $theme-color !important;;
+    transition: all ease-out 0.2s;
+  }
+}
+#splide {
+  $theme-color: #84bd34;
+  transition: all ease-in 0.2s;
+  &:hover {
+    color: $theme-color !important;;
+    transition: all ease-out 0.2s;
+  }
+}
