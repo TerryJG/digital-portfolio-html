@@ -21,7 +21,7 @@ router.get('/:id', async (req, res) => {
         return res.status(404).json({ error: 'Not a valid ID' });
     }
     try {
-        const category = await CategoryInfo.find(id);
+        const category = await CategoryInfo.findById(id);
         if (!category) {
             return res.status(404).json({ error: "Could not find category" });
         }

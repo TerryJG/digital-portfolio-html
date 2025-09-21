@@ -126,7 +126,7 @@ class PortfolioDB {
                data-caption="
                <div>
                <h4>${item.title}</h4>
-               <p>${item.subTitle}</p>
+               <p>${item.description}</p>
                </div>"
                href="${item.videoSrc}" style="cursor: pointer;">
             <i id="playIcon" class="fa-solid fa-play" style="z-index: 7;"></i>
@@ -156,7 +156,7 @@ class PortfolioDB {
                data-caption="
                <div>
                <h4>${item.title}</h4>
-               <p>${item.subTitle}</p>
+               <p>${item.description}</p>
                </div>"
                href="${item.imgSrc}" style="cursor: pointer;">
             <i class="fa-solid fa-image" style="z-index: 7;"></i>
@@ -180,9 +180,9 @@ class PortfolioDB {
          data-caption="
          <div>
          <h4>${item.title}</h4>
-         <p>${item.subTitle}</p>
+         <p>${item.description}</p>
          </div>"
-         href="${item.webSrc}" style="cursor: pointer;">
+         href="${item.webHref}" style="cursor: pointer;">
       <i class="fa-solid fa-globe" style="z-index: 7;"></i>
       <img id="thumbnailImage" 
            src="${item.imgSrc}" 
@@ -261,7 +261,7 @@ class PortfolioDB {
         }
 
         button.appendChild(iconsSpan);
-        button.innerHTML += category.menuTitle;
+        button.innerHTML += (category.abbreviatedTitle);
         desktopMenu.appendChild(button);
       });
   }
