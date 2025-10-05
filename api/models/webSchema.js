@@ -70,13 +70,13 @@ const webSchema = new mongoose.Schema({
         type: String,
         default: ''
     },
-    webHref: {
+    href: {
         type: String,
         required: true
     }
 }, {
     timestamps: true,
-    collection: 'web'
+    collection: 'programming'
 });
 
-export const Web = mongoose.model('Web', webSchema);
+export const Web = mongoose.model('Programming', webSchema);

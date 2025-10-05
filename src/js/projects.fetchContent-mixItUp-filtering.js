@@ -166,7 +166,7 @@ class PortfolioDB {
                  style="width: 100%; height: 100%; object-fit: cover;"/>
           </div>`;
 
-      } else if (item.contentType === 'web') {
+      } else if (item.contentType === 'programming' && (item.itemType === "Website" || item.itemType === "Web Application")) {
         const featuredClass = item.isFeatured ? 'big' : '';
         html += `
     <div class="mix lc-block web-item fancybox mobile-hide overflow-hidden rounded ${featuredClass} ${categoryClass}"
@@ -182,7 +182,7 @@ class PortfolioDB {
          <h4>${item.title}</h4>
          <p>${item.description}</p>
          </div>"
-         href="${item.webHref}" style="cursor: pointer;">
+         href="${item.href}" style="cursor: pointer;">
       <i class="fa-solid fa-globe" style="z-index: 7;"></i>
       <img id="thumbnailImage" 
            src="${item.imgSrc}" 
@@ -274,7 +274,6 @@ class PortfolioDB {
     }
 
     console.log('Initializing MixItUp...');
-    console.log('count:', container.children.length);
 
     try {
       this.mixer = mixitup(container, {
